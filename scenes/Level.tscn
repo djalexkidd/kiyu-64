@@ -14,8 +14,13 @@ extents = Vector3( 0.25, 1, 7 )
 [node name="Kiyu" parent="." instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 2.5, 0 )
 
-[node name="InterpolatedCamera" type="InterpolatedCamera" parent="Kiyu"]
+[node name="osef" type="Spatial" parent="Kiyu"]
 transform = Transform( 1, 0, 0, 0, 0.882948, 0.469472, 0, -0.469472, 0.882948, 5, 7, 15 )
+
+[node name="InterpolatedCamera" type="InterpolatedCamera" parent="."]
+transform = Transform( 1, 0, 0, 0, 0.882948, 0.469472, 0, -0.469472, 0.882948, -5, 15, 20 )
+target = NodePath("../Kiyu/osef")
+speed = 4.0
 enabled = true
 
 [node name="Fallzone" type="Area" parent="."]
