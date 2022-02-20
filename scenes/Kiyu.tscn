@@ -149,7 +149,7 @@ surfaces/0 = {
 "vertex_count": 2304
 }
 
-[sub_resource type="BoxShape" id=11]
+[sub_resource type="SphereShape" id=11]
 
 [node name="Kiyu" type="KinematicBody"]
 script = ExtResource( 10 )

@@ -2,9 +2,8 @@ extends KinematicBody
 
 var velocity = Vector3(0,0,0)
 const SPEED = 6
-const ROTSPEED = 10
-const GRAVITY = 0.2
-const JUMPFORCE = 8
+const GRAVITY = 0.4
+const JUMPFORCE = 14
 
 func _physics_process(delta):
 	if Input.is_action_pressed("ui_right") and Input.is_action_pressed("ui_left"):
@@ -22,7 +21,8 @@ func _physics_process(delta):
 		velocity.y = JUMPFORCE
 		$JumpSound.play()
 	
-	velocity.y = velocity.y - GRAVITY
+	if !is_on_floor():
+		velocity.y = velocity.y - GRAVITY
 	
 	move_and_slide(velocity, Vector3.UP)
 
